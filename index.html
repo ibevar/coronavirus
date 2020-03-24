@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<title>Os Impactos do Coronavírus no Varejo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<script src="chart.js"></script>
+<style>
+  body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+
+<body class="w3-light-grey">
+  <div class="w3-content">
+    <header class="w3-container w3-center w3-padding-32">
+      <h1><b>Impactos</b></h1>
+      <p>do Coronavírus  no <span class="w3-tag">Varejo</span></p>
+    </header>
+    <!-- Grid -->
+    <div class="w3-row">
+      <!-- Blog entries -->
+      <div class="w3-col">
+        <!-- Blog entry -->
+        <div class="w3-card-4 w3-margin w3-white">
+          <img src="header.jpg" alt="Nature" style="width:100%">
+          <div class="w3-container w3-center">
+            <h3><b>Indicador de Medo</b></h3>
+            <h5>O nível de atenção da população relativo a surtos, epidemias e pandemias.<br> <span class="w3-opacity">Atualizado em Março 20, 2020</span></h5>
+          </div>
+          <div class="w3-container">
+            <p>
+              <center>
+                <canvas id="Test_Chart"></canvas>
+              </center>
+            </p>
+            <p class="w3-tiny">Autoria: Ibevar. Apoio: Epistemics. Fonte: Johns Hopkins University (https://coronavirus.jhu.edu); Wikipedia.org <br>
+            * O indicador de medo leva em consideração o número diário de busca de artigos da Wikipédia sobre 20+ enfermidades infecciosas historicamente relevantes (ex. Gripe Espanhola, Ebola, SARS, etc.)</p>
+
+
+          </div>
+        </div>
+      </div>
+    <!-- END w3-content -->
+    </div>
+  </div>
+  <!-- Footer -->
+
+</body>
+
+<script type="text/javascript">
+datas = [
+  "01/Jan","02/Jan","03/Jan","04/Jan","05/Jan","06/Jan","07/Jan","08/Jan","09/Jan","10/Jan",
+  "11/Jan","12/Jan","13/Jan","14/Jan","15/Jan","16/Jan","17/Jan","18/Jan","19/Jan","20/Jan",
+  "21/Jan","22/Jan","23/Jan","24/Jan","25/Jan","26/Jan","27/Jan","28/Jan","29/Jan","30/Jan",
+  "31/Jan","01/Fev","02/Fev","03/Fev","04/Fev","05/Fev","06/Fev","07/Fev","08/Fev","09/Fev",
+  "10/Fev","11/Fev","12/Fev","13/Fev","14/Fev","15/Fev","16/Fev","17/Fev","18/Fev","19/Fev",
+  "20/Fev","21/Fev","22/Fev","23/Fev","24/Fev","25/Fev","26/Fev","27/Fev","28/Fev","29/Fev",
+  "01/Mar","02/Mar","03/Mar","04/Mar","05/Mar","06/Mar","07/Mar","08/Mar","09/Mar","10/Mar",
+  "11/Mar","12/Mar","13/Mar","14/Mar","15/Mar","16/Mar","17/Mar","18/Mar","19/Mar"
+]
+
+new Chart(document.getElementById("Test_Chart"), {
+  type: 'bar',
+  data: {
+    labels: datas,
+    datasets: [
+      {
+        data: [
+          0.00,0.00,0.01,0.00,0.01,0.01,0.01,0.01,0.06,0.04,0.05,0.03,0.04,0.17,0.37,0.71,0.19,
+          0.41,0.52,2.96,10.38,38.98,45.07,36.79,43.34,40.05,41.50,79.35,100.00,74.81,49.45,
+          28.20,20.27,20.49,13.27,4.54,2.88,3.51,2.41,2.39,2.86,2.94,3.08,3.85,2.52,2.23,2.24,
+          2.99,2.52,1.98,1.84,1.37,1.22,1.55,2.28,3.32,12.01,11.00,10.07,6.36,5.48,7.33,6.10,
+          5.97,5.53,5.10,4.16,4.74,8.24,8.91,11.97,22.99,19.49,15.64,18.25,32.28,35.90,39.63,
+          55.09
+        ],
+        label: "Informações sobre o COVID-19",
+        type: "line",
+        borderColor: "#3e95cd",
+        yAxisID: 'A',
+        fill: false
+      },
+      {
+        data: [
+          0.17,0.33,0.36,0.32,0.33,0.40,0.62,0.40,0.65,0.46,0.43,0.43,0.57,1.09,1.08,1.39,0.78,
+          1.14,1.45,4.81,10.51,18.40,22.42,20.91,22.13,20.73,25.55,37.89,47.88,42.61,30.93,
+          15.62,12.62,12.73,9.04,6.42,7.02,7.17,5.52,7.06,5.34,4.68,3.99,4.45,3.01,2.68,2.81,
+          2.79,2.95,2.44,2.10,2.01,2.09,3.58,5.69,9.62,21.12,19.26,17.15,12.87,10.62,14.04,
+          11.80,9.98,11.69,12.33,10.20,11.71,16.11,18.19,29.48,46.64,46.15,38.20,41.35,60.48,
+          68.85,78.95,100.00
+      ],
+        label: "Indicador do Medo",
+        type: "line",
+        borderColor: "#8e5ea2",
+        yAxisID: 'A',
+        fill: true
+      },
+      {
+        data: [
+          0.09,0.15,0.18,0.13,0.15,0.15,0.16,0.16,0.15,0.11,0.14,0.15,0.17,0.17,0.15,0.20,0.14,
+          0.17,0.19,0.23,0.41,1.02,1.36,1.26,1.26,1.62,2.16,3.21,3.39,4.12,3.39,2.61,3.23,4.89,
+          5.10,4.98,3.00,3.12,3.21,4.22,2.54,2.16,1.48,1.33,1.20,1.01,0.96,1.81,1.08,1.21,0.90,
+          0.69,0.84,1.65,7.38,7.56,8.76,6.79,5.95,3.68,3.28,4.35,3.93,3.38,4.25,4.03,2.60,3.72,
+          10.28,10.43,100.00,78.07,46.26,28.44,62.51,84.55,87.97,86.97,76.31
+        ],
+        label: "Pandemia e Quarentena",
+        type: "line",
+        borderColor: "#3cba9f",
+        yAxisID: 'A',
+        fill: false
+      },
+      {
+        data: [
+          0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,265,472,698,785,1781,1477,1755,2010,2127,
+          2603,2838,3239,3915,3721,3173,3437,2676,3001,2546,2035,14153,5151,2662,2097,2132,2003,
+          1852,516,977,996,978,554,882,741,992,1292,1503,1989,1981,1858,2573,2298,3111,3625,
+          4049,3892,4390,4567,7266,8362,10907,11170,12940,12897,15748,20584,26111
+        ],
+        label: "Novos Casos (normalizados)",
+        type: "bar",
+        backgroundColor: "#ff6666",
+        yAxisID: 'B',
+        fill: true
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: false,
+      text: 'Buscas de informação e novos casos de Coronavírus'
+    },
+    scales: {
+      yAxes: [
+        {id: 'A',type: 'linear',position: 'left', scaleLabel: {display: true, labelString:'Indicadores de Busca'}, ticks: {max: 100, min: 0}},
+        {id: 'B',type: 'linear',position: 'right',scaleLabel: {display: true, labelString:'Número de novos casos'}}
+        ]
+      }
+    }});
+
+
+
+    // ]}}
+    //   }
+    //
+    // });
+
+
+
+</script>
+
+</html>
